@@ -1,15 +1,22 @@
-import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
+import React {useContext, useState} from "react";
 import "../../styles/home.css";
+import {Context} from "../store/appContext.js"
 
-export const Home = () => (
-	<div className="text-center mt-5">
-		<h1>Hello Rigo!</h1>
-		<p>
-			<img src={rigoImage} />
-		</p>
-		<a href="#" className="btn btn-success">
-			If you see this green button, bootstrap is working
-		</a>
-	</div>
+
+export const Home = () => {
+	const {store, actions} = useContext(context)
+	const [item, setItem] = useState("")
+
+	return(
+		<div>
+			<div>
+				<input
+				    type="text"
+					className="form-control"
+					placeholder="New Task"
+					onChange={(e)}
+			</div>
+		</div>
+	)
+}
 );
